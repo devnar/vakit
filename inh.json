@@ -4,4 +4,5 @@
   "description": "INH için namaz saatleri uygulaması",
   "repo": "https://github.com/devnar/vakit",
   "entry": "app.js",
+  "tags": ["vakit", "namaz", "islam"]
 }
