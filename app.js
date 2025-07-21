@@ -16,8 +16,9 @@ function getPrayerTimes(city = "Istanbul") {
       const data = response.data.data.timings;
       console.log(`\n📍 ${city} için ezan vakitleri:\n`);
       for (const [name, time] of Object.entries(data)) {
-        console.log(`${name.padEnd(10)}: ${time}`);
+        console.log(`${translateName(name).padEnd(12)}: ${time}`);
       }
+
 
       showNextPrayer(data);
     })
@@ -35,13 +36,27 @@ function showNextPrayer(timings) {
     const time = moment(timings[key], format);
     if (time.isAfter(now)) {
       const diff = moment.duration(time.diff(now));
-      console.log(`\n⏰ Sıradaki vakit: ${key} (${timings[key]})`);
+      console.log(`\n⏰ Sıradaki vakit: ${translateName(key)} (${timings[key]})`);
       console.log(`➡️ Kalan süre: ${diff.hours()} saat ${diff.minutes()} dakika\n`);
       return;
     }
   }
 
   console.log("\n🌙 Tüm vakitler geçti, yarını bekleyiniz.\n");
+}
+
+function translateName(english) {
+  const map = {
+    Fajr: "İmsak",
+    Sunrise: "Güneş",
+    Dhuhr: "Öğle",
+    Asr: "İkindi",
+    Maghrib: "Akşam",
+    Isha: "Yatsı",
+    Imsak: "İmsak",
+    Midnight: "Gece Yarısı"
+  };
+  return map[english] || english;
 }
 
 // Giriş
