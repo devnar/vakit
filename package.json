@@ -1,6 +1,7 @@
 {
   "name": "vakit",
   "version": "1.0.0",
+  "inh": true,
   "description": "Belirtilen şehir için ezan vakitlerini gösteren basit bir INH uygulaması.",
   "main": "app.js",
   "scripts": {
