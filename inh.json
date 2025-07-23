@@ -1,8 +1,0 @@
-{
-  "name": "vakit",
-  "version": "1.0.0",
-  "description": "INH için namaz saatleri uygulaması",
-  "repo": "https://github.com/devnar/vakit",
-  "entry": "app.js",
-  "tags": ["vakit", "namaz"]
-}
